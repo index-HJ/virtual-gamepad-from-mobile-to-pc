@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width,
+             initial-scale=1,
+             maximum-scale=1,
+             user-scalable=no"
+>
+
+<title>USB Gamepad</title>
+
+<link
+    rel="stylesheet"
+    href="style.css"
+>
+
+</head>
+
+<body>
+
+<div id="topbar">
+
+    <span id="status">
+        غير متصل
+    </span>
+
+    <button id="editButton">
+        تعديل
+    </button>
+
+    <button id="resetButton">
+        إعادة
+    </button>
+
+</div>
+
+
+<div id="gamepad">
+
+
+    <!-- D-PAD -->
+
+    <div
+        class="control dpad"
+        id="dpad"
+        data-name="dpad"
+    >
+
+        <button
+            class="dpad-button up"
+            data-dir="up"
+        >
+            ▲
+        </button>
+
+        <button
+            class="dpad-button left"
+            data-dir="left"
+        >
+            ◀
+        </button>
+
+        <button
+            class="dpad-button right"
+            data-dir="right"
+        >
+            ▶
+        </button>
+
+        <button
+            class="dpad-button down"
+            data-dir="down"
+        >
+            ▼
+        </button>
+
+    </div>
+
+
+    <!-- FACE BUTTONS -->
+
+    <div
+        class="control face-buttons"
+        id="faceButtons"
+        data-name="faceButtons"
+    >
+
+        <button
+            class="game-button y"
+            data-button="Y"
+        >
+            Y
+        </button>
+
+        <button
+            class="game-button x"
+            data-button="X"
+        >
+            X
+        </button>
+
+        <button
+            class="game-button b"
+            data-button="B"
+        >
+            B
+        </button>
+
+        <button
+            class="game-button a"
+            data-button="A"
+        >
+            A
+        </button>
+
+    </div>
+
+
+    <!-- LEFT STICK -->
+
+    <div
+        class="control stick"
+        id="leftStick"
+        data-stick="left"
+    >
+
+        <div class="stick-ring">
+
+            <div class="stick-knob"></div>
+
+        </div>
+
+        <span>L</span>
+
+    </div>
+
+
+    <!-- RIGHT STICK -->
+
+    <div
+        class="control stick"
+        id="rightStick"
+        data-stick="right"
+    >
+
+        <div class="stick-ring">
+
+            <div class="stick-knob"></div>
+
+        </div>
+
+        <span>R</span>
+
+    </div>
+
+
+    <!-- SHOULDER BUTTONS -->
+
+    <button
+        class="control wide-button lb"
+        data-button="LB"
+    >
+        LB
+    </button>
+
+    <button
+        class="control wide-button rb"
+        data-button="RB"
+    >
+        RB
+    </button>
+
+
+    <!-- TRIGGERS -->
+
+    <div
+        class="control trigger lt"
+        data-trigger="LT"
+    >
+        LT
+    </div>
+
+    <div
+        class="control trigger rt"
+        data-trigger="RT"
+    >
+        RT
+    </div>
+
+
+    <!-- START SELECT -->
+
+    <button
+        class="control small-button select"
+        data-button="SELECT"
+    >
+        SELECT
+    </button>
+
+    <button
+        class="control small-button start"
+        data-button="START"
+    >
+        START
+    </button>
+
+
+    <!-- STICK BUTTONS -->
+
+    <button
+        class="control small-button l3"
+        data-button="L3"
+    >
+        L3
+    </button>
+
+    <button
+        class="control small-button r3"
+        data-button="R3"
+    >
+        R3
+    </button>
+
+
+</div>
+
+
+<script src="gamepad.js"></script>
+
+</body>
+
+</html>

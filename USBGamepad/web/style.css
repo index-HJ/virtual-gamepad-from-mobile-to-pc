@@ -1,0 +1,473 @@
+* {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+}
+
+html,
+body {
+
+    margin: 0;
+    padding: 0;
+
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+
+    background: #111;
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    touch-action: none;
+}
+
+
+#topbar {
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    height: 48px;
+
+    z-index: 1000;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 6px 10px;
+
+    background: #1d1d1d;
+}
+
+
+#status {
+
+    color: #ff5555;
+
+    font-size: 14px;
+
+    direction: rtl;
+}
+
+
+#status.connected {
+
+    color: #55ff88;
+}
+
+
+#topbar button {
+
+    border: none;
+
+    background: #333;
+
+    color: white;
+
+    padding: 8px 14px;
+
+    border-radius: 8px;
+
+    font-size: 14px;
+}
+
+
+#gamepad {
+
+    position: absolute;
+
+    top: 48px;
+    left: 0;
+
+    width: 100%;
+    height: calc(100% - 48px);
+
+    overflow: hidden;
+}
+
+
+/* -----------------------------------
+   Generic buttons
+----------------------------------- */
+
+.game-button,
+.wide-button,
+.small-button,
+.dpad-button {
+
+    border: none;
+
+    color: white;
+
+    background: #292929;
+
+    box-shadow:
+        inset 0 0 0 2px #444,
+        0 5px 10px #0008;
+
+    touch-action: none;
+}
+
+
+.game-button:active,
+.wide-button:active,
+.small-button:active,
+.dpad-button:active,
+.trigger.active {
+
+    transform: scale(0.94);
+
+    background: #555;
+}
+
+
+/* -----------------------------------
+   Face buttons
+----------------------------------- */
+
+.face-buttons {
+
+    position: absolute;
+
+    width: 150px;
+    height: 150px;
+
+    right: 9%;
+
+    top: 35%;
+}
+
+
+.face-buttons button {
+
+    position: absolute;
+
+    width: 52px;
+    height: 52px;
+
+    border-radius: 50%;
+
+    font-weight: bold;
+
+    font-size: 18px;
+}
+
+
+.face-buttons .y {
+
+    top: 0;
+    left: 49px;
+}
+
+.face-buttons .x {
+
+    top: 49px;
+    left: 0;
+}
+
+.face-buttons .b {
+
+    top: 49px;
+    right: 0;
+}
+
+.face-buttons .a {
+
+    bottom: 0;
+    left: 49px;
+}
+
+
+/* -----------------------------------
+   D-Pad
+----------------------------------- */
+
+.dpad {
+
+    position: absolute;
+
+    left: 9%;
+
+    top: 35%;
+
+    width: 150px;
+    height: 150px;
+}
+
+
+.dpad-button {
+
+    position: absolute;
+
+    width: 50px;
+    height: 50px;
+
+    border-radius: 8px;
+
+    font-size: 22px;
+}
+
+
+.dpad-button.up {
+
+    top: 0;
+    left: 50px;
+}
+
+
+.dpad-button.down {
+
+    bottom: 0;
+    left: 50px;
+}
+
+
+.dpad-button.left {
+
+    left: 0;
+    top: 50px;
+}
+
+
+.dpad-button.right {
+
+    right: 0;
+    top: 50px;
+}
+
+
+/* -----------------------------------
+   Analog sticks
+----------------------------------- */
+
+.stick {
+
+    position: absolute;
+
+    width: 130px;
+    height: 130px;
+
+    text-align: center;
+
+    color: #aaa;
+
+    font-size: 12px;
+}
+
+
+#leftStick {
+
+    left: 24%;
+
+    bottom: 7%;
+}
+
+
+#rightStick {
+
+    right: 24%;
+
+    bottom: 7%;
+}
+
+
+.stick-ring {
+
+    width: 110px;
+    height: 110px;
+
+    border-radius: 50%;
+
+    background: #202020;
+
+    border: 3px solid #444;
+
+    position: relative;
+}
+
+
+.stick-knob {
+
+    width: 58px;
+    height: 58px;
+
+    border-radius: 50%;
+
+    background: #454545;
+
+    border: 2px solid #666;
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    transform:
+        translate(-50%, -50%);
+}
+
+
+/* -----------------------------------
+   LB / RB
+----------------------------------- */
+
+.wide-button {
+
+    width: 110px;
+    height: 44px;
+
+    border-radius: 12px;
+
+    position: absolute;
+
+    top: 5%;
+}
+
+
+.lb {
+
+    left: 13%;
+}
+
+
+.rb {
+
+    right: 13%;
+}
+
+
+/* -----------------------------------
+   Triggers
+----------------------------------- */
+
+.trigger {
+
+    position: absolute;
+
+    top: 12%;
+
+    width: 100px;
+    height: 55px;
+
+    border-radius: 15px;
+
+    background: #292929;
+
+    border: 2px solid #444;
+
+    color: white;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    font-weight: bold;
+
+    touch-action: none;
+}
+
+
+.lt {
+
+    left: 14%;
+}
+
+
+.rt {
+
+    right: 14%;
+}
+
+
+/* -----------------------------------
+   Start / Select
+----------------------------------- */
+
+.small-button {
+
+    position: absolute;
+
+    width: 65px;
+    height: 38px;
+
+    border-radius: 20px;
+
+    font-size: 11px;
+}
+
+
+.select {
+
+    left: 43%;
+
+    top: 63%;
+}
+
+
+.start {
+
+    right: 43%;
+
+    top: 63%;
+}
+
+
+.l3 {
+
+    left: 29%;
+
+    bottom: 2%;
+}
+
+
+.r3 {
+
+    right: 29%;
+
+    bottom: 2%;
+}
+
+
+/* -----------------------------------
+   Edit mode
+----------------------------------- */
+
+.edit-mode .control {
+
+    outline:
+        2px dashed #00aaff;
+
+    outline-offset: 4px;
+}
+
+
+.edit-mode .control::after {
+
+    content: "اسحب";
+
+    position: absolute;
+
+    top: -18px;
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    color: #00aaff;
+
+    font-size: 10px;
+
+    white-space: nowrap;
+}
+
